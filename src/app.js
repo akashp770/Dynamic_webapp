@@ -4,6 +4,8 @@ const app = express();
 const mongoose = require("mongoose");
 
 const detail = require("./models/detail.js");
+const slider = require("./models/slider.js");
+
 const routes = require("./routes/main.js");
 
 // use of statics  --------/static/css/style.css
@@ -18,6 +20,27 @@ app.get("/", (req, res) => {
 //db connection
 mongoose.connect("mongodb://localhost/Dynamic_web", () => {
   console.log("db connected");
+
+  //Slider
+
+  // slider.create([
+  //   {
+  //     title: "Learn Java Programming",
+  //     subTitle: "Java is one of the most popular programming language.",
+  //     imageUrl: "/static/images/p2.jpg",
+  //   },
+  //   {
+  //     title: "Learn JavaScript",
+  //     subTitle: "JavaScript is one of the most frequently use  language.",
+  //     imageUrl: "/static/images/p4.jpg",
+  //   },
+  //   {
+  //     title: "Learn Nodejs",
+  //     subTitle: "Nodejs is Runtime Environment",
+  //     imageUrl: "/static/images/p4.jpg",
+  //   },
+  // ]);
+
   // detail.create({
   //   brandName: "AP Solutions",
   //   brandIconUrl:
