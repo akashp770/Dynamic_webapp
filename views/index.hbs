@@ -23,9 +23,28 @@
     <title>AP Solution</title>
   </head>
   <body>
-         {{> navbar data = details}}
+    {{> navbar data = details}}
 
           {{> slider slides = slides}}
+
+    {{! ----section banner 1  }}
+
+    <section class="banner1_section background1 py-5">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Start learning new technology here!</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Veritatis commodi maiores enim, ratione culpa accusamus fugit
+              laudantium consequuntur sapiente, alias, ipsa excepturi magnam. A
+              ipsam deleniti architecto laudantium maxime repellendus!</p>
+            <button class="btn btn-outline-primary">
+              Start learning
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     {{! ----Services Section---- }}
 
@@ -56,10 +75,55 @@
       </div>
     </section>
 
+    {{! -----Banner 2 Section ---- }}
+
+    <section class="banner2_section py-5">
+      <div class="container">
+            {{#each bannerr}}
+        <div class="row">
+          <div class="col-md-6 text-center pt-5">
+            {{! left side }}
+            <h3>{{this.title}} </h3>
+            <p>{{this.description}}</p>
+            <button class="btn btn-primary">Click Here</button>
+
+          </div>
+          <div class="col-md-6 text-center">
+            {{! right side }}
+            <img src="{{this.imageUrl}}" alt="" />
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </section>
+
+    {{! --- Banner3 Section  }}
+
+    <section class="banner2_section py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center">
+            {{! left side }}
+            <img src="/static/images/p9.jpg" alt="" width="300" height="300" />
+
+          </div>
+          <div class="col-md-6 text-center py-5">
+            {{! right side }}
+            <h3>We work for people, not for money</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos vel
+              ad nihil tempora esse ipsum culpa! Ad, ea velit ut aliquam aut
+              reprehenderit, earum, illo dignissimos animi eveniet odit
+              voluptate!</p>
+            <button class="btn btn-primary">Click Here</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     {{! Contactus Section }}
 
-    <section id=" contact_us_section" class="py-5 background1 "  >
-      <div class="container ">
+    <section id="contact_us_section" class="py-5 background1">
+      <div class="container">
         <h3 class="text-center text-secondary">Contact us</h3>
         <div class="row">
           <div class="col-md-12">
@@ -68,7 +132,7 @@
                 <label for="exampleInputEmail1" class="form-label">Your email
                   address</label>
                 <input
-                name="email"
+                  name="email"
                   type="email"
                   class="form-control"
                   id="exampleInputEmail1"
@@ -82,7 +146,7 @@
                 <label for="contactNumberField" class="form-label">Your contact
                   number</label>
                 <input
-                name="contact"
+                  name="contact"
                   type="number"
                   class="form-control"
                   id="contactNumberField"
@@ -90,7 +154,7 @@
               </div>
               <div class="form-floating my-2">
                 <textarea
-                name="query"
+                  name="query"
                   class="form-control"
                   style="height: 250px"
                   placeholder="Enter your query here"
@@ -115,6 +179,29 @@
         </div>
       </div>
     </section>
+
+    {{! ----About Section  }}
+
+    <section id="about_section" class=" py-5">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-12">
+            <h3> About this site</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Sapiente doloribus incidunt alias praesentium, totam dolor, labore
+              dolorum eveniet sint numquam illo, ullam aliquid vel accusantium
+              at architecto quia quas autem Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Illum debitis eveniet fugit
+              voluptatibus dicta vero incidunt corporis eaque aut qui
+              temporibus, expedita maxime, consequatur blanditiis accusantium
+              mollitia vitae quas voluptate.
+            </p>
+            <button class="btn btn-success btn-lg">Contact us</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{> footer}}
 
     <!-- Optional JavaScript; choose one of the two! -->
 

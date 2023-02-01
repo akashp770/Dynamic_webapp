@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const detail = require("./models/detail.js");
 const slider = require("./models/slider.js");
 const service = require("./models/service.js");
+const banner = require("./models/banner.js");
 
 const routes = require("./routes/main.js");
 
@@ -28,6 +29,16 @@ app.get("/", (req, res) => {
 //db connection
 mongoose.connect("mongodb://localhost/Dynamic_web", () => {
   console.log("db connected");
+
+  // banner
+  // banner.create([
+  //   {
+  //     title: "We work for people, not for money",
+  //     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+
+  //     imageUrl: "/static/images/p8.jpg",
+  //   },
+  // ]);
 
   //Service
 

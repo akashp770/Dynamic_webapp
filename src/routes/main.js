@@ -4,12 +4,15 @@ const detail = require("../models/detail.js");
 const service = require("../models/service.js");
 const slider = require("../models/slider.js");
 const contact = require("../models/contact.js");
+const banner = require("../models/banner");
+
 const routes = express.Router();
 
 routes.get("/", async (req, res) => {
   const details = await detail.findOne({ _id: "63d7898c9cf54db973d396e9" });
   const slides = await slider.find();
   const services = await service.find();
+  const bannerr = await banner.find();
 
   // console.log(details);
   // console.log(slides);
@@ -19,6 +22,7 @@ routes.get("/", async (req, res) => {
     details: details,
     slides: slides,
     services: services,
+    bannerr: bannerr,
   });
 });
 
