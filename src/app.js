@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 
 const detail = require("./models/detail.js");
 const slider = require("./models/slider.js");
+const service = require("./models/service.js");
 
 const routes = require("./routes/main.js");
 
@@ -20,6 +21,35 @@ app.get("/", (req, res) => {
 //db connection
 mongoose.connect("mongodb://localhost/Dynamic_web", () => {
   console.log("db connected");
+
+  //Service
+
+  // service.create([
+  //   {
+  //     icon: "fa-brands fa-accusoft",
+  //     title: "Provide best Courses",
+  //     description:
+  //       "We provide courses that help our tutee in learning and palacement.",
+  //     linkText: "Check",
+  //     link: "http://www.google.com",
+  //   },
+  //   {
+  //     icon: "fa-brands fa-affiliatetheme",
+  //     title: "Learn Projects",
+  //     description:
+  //       "We provide courses that help our tutee in learning and palacement.",
+  //     linkText: "Learn",
+  //     link: "http://www.google.com",
+  //   },
+  //   {
+  //     icon: "fa-brands fa-affiliatetheme",
+  //     title: "Learn Projects",
+  //     description:
+  //       "We provide courses that help our tutee in learning and palacement.",
+  //     linkText: "Learn",
+  //     link: "http://www.google.com",
+  //   },
+  // ]);
 
   //Slider
 
