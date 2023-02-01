@@ -3,7 +3,7 @@ const express = require("express");
 const detail = require("../models/detail.js");
 const service = require("../models/service.js");
 const slider = require("../models/slider.js");
-
+const contact = require("../models/contact.js");
 const routes = express.Router();
 
 routes.get("/", async (req, res) => {
@@ -35,5 +35,20 @@ routes.get("/contactus", async (req, res) => {
   res.render("contactus", {
     details: details,
   });
+});
+
+routes.post("/process-contact-form", async (req, res) => {
+  console.log("Submmited");
+  console.log(req.body);
+
+  //Save query data to db
+  try {
+    const data = await contact.create(req.body);
+    console.log(data);
+    res.redirect("/");
+  } catch (e) {
+    console.log(e);
+    res.redirect("/");
+  }
 });
 module.exports = routes;

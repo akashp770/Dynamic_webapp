@@ -2,6 +2,7 @@ const express = require("express");
 const hbs = require("hbs");
 const app = express();
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 
 const detail = require("./models/detail.js");
 const slider = require("./models/slider.js");
@@ -11,6 +12,12 @@ const routes = require("./routes/main.js");
 
 // use of statics  --------/static/css/style.css
 app.use("/static", express.static("public"));
+
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 
 app.use("", routes);
 

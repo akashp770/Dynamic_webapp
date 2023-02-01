@@ -11,15 +11,21 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="/static/css/style.css" />
 
     <title>AP Solution</title>
   </head>
   <body>
-    {{> navbar data = details}}
-   
-    {{> slider slides = slides}}
+         {{> navbar data = details}}
+
+          {{> slider slides = slides}}
 
     {{! ----Services Section---- }}
 
@@ -29,32 +35,86 @@
         <div class="row mt-5">
 
           {{! --First service col-- }}
-          {{#each services }}
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <div class="container text-center py-3" >
-                <i class="{{this.icon}} service-icon"></i>
+          {{#each services}}
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <div class="container text-center py-3">
+                    <i class="{{this.icon}} service-icon"></i>
 
-                </div>
-                <h5 class="card-title">{{this.title}}</h5>
+                  </div>
+                  <h5 class="card-title">{{this.title}}</h5>
                   <p>{{this.description}}</p>
                   <a href="{{this.link}}">{{this.linkText}}</a>
                   <a href="#!">Support</a>
+                </div>
               </div>
-            </div>
 
-          </div>
+            </div>
           {{/each}}
         </div>
       </div>
     </section>
-    
 
-    
-     {{!-- Contact us Section --}}
+    {{! Contactus Section }}
 
-    <section id="" ></section>
+    <section id=" contact_us_section" class="py-5 background1 "  >
+      <div class="container ">
+        <h3 class="text-center text-secondary">Contact us</h3>
+        <div class="row">
+          <div class="col-md-12">
+            <form action="/process-contact-form" method="post">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Your email
+                  address</label>
+                <input
+                name="email"
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+                <div id="emailHelp" class="form-text">We'll never share your
+                  email with anyone else.</div>
+              </div>
+              <div class="mb-3">
+
+                <label for="contactNumberField" class="form-label">Your contact
+                  number</label>
+                <input
+                name="contact"
+                  type="number"
+                  class="form-control"
+                  id="contactNumberField"
+                />
+              </div>
+              <div class="form-floating my-2">
+                <textarea
+                name="query"
+                  class="form-control"
+                  style="height: 250px"
+                  placeholder="Enter your query here"
+                  id="queryField"
+                ></textarea>
+                <label for="queryField">Your query..</label>
+              </div>
+              <div class="mb-3 form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="exampleCheck1"
+                />
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+              <div class="container text-center">
+                <button type="submit" class="btn btn-dark">Submit</button>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
